@@ -1,0 +1,17 @@
+title: uNet-Dev
+default_lang: en
+author:
+  name: AnExiledGod
+  email: marcushkrueger@gmail.com
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'uNet-Dev provides a centralized repository for everything from playing Rust, to running Rust servers and even developing custom plugins for Rust.'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+blog:
+  route: /blog

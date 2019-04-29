@@ -1,0 +1,54 @@
+Administrators:
+  groupname: Administrators
+  access:
+    site:
+      login: 'true'
+    admin:
+      super: 'true'
+      login: 'true'
+      cache: 'true'
+      configuration: 'true'
+      configuration_system: 'true'
+      configuration_site: 'true'
+      configuration_media: 'true'
+      configuration_info: 'true'
+      settings: 'true'
+      pages: 'true'
+      maintenance: 'true'
+      statistics: 'true'
+      plugins: 'true'
+      themes: 'true'
+      tools: 'true'
+      users: 'true'
+    admin-addon-user-manager:
+      users: 'true'
+      groups: 'true'
+      users_expert: 'true'
+'Confidential Developers':
+  groupname: 'Confidential Developers'
+  access:
+    site:
+      login: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+'Expert Developers':
+  groupname: 'Expert Developers'
+  access:
+    site:
+      login: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+'Intermediate Developers':
+  groupname: 'Intermediate Developers'
+  access:
+    site:
+      login: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }
+'Junior Developers':
+  groupname: 'Junior Developers'
+  access:
+    site:
+      login: 'true'
+    admin: {  }
+    admin-addon-user-manager: {  }

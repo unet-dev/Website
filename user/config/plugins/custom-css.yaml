@@ -1,0 +1,2 @@
+enabled: false
+css_inline: "#header a\r\n{\r\n    font-size: 200%;\r\n    font-weight: 900;\r\n    color: #fff;\r\n}\r\n\r\n#sidebar h5\r\n{\r\n    margin: 0.1em 0 0;\r\n    font-size: 125%;\r\n}\r\n\r\n#sidebar ul.topics>li>a\r\n{\r\n    font-size: 100%;\r\n}\r\n\r\n.dd-item a\r\n{\r\n    background-color: #363f4a;\r\n}\r\n\r\n#sidebar ul li.active>a\r\n{\r\n    background-color: #b5bfc9;\r\n}\r\n\r\n#sidebar h5+ul.topics, #sidebar ul.topics ul { display: block }"
