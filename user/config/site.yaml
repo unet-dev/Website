@@ -9,7 +9,7 @@ taxonomies:
 metadata:
   description: 'uNet-Dev provides a centralized repository for everything from playing Rust, to running Rust servers and even developing custom plugins for Rust.'
 summary:
-  enabled: true
+  enabled: false
   format: short
   size: 300
   delimiter: '==='
