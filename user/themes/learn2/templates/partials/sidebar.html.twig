@@ -1,0 +1,65 @@
+{% macro loop(page, parent_loop) %}
+    {% import _self as self %}
+
+    {% if parent_loop|length > 0 %}
+        {% set data_level = parent_loop %}
+    {% else %}
+        {% set data_level = 0 %}
+    {% endif %}
+    {% for p in page.children.visible %}
+        {% set parent_page = p.activeChild ? ' parent' : '' %}
+        {% set current_page = p.active ? ' active' : '' %}
+        <li class="dd-item{{ parent_page }}{{ current_page }}" data-nav-id="{{ p.route }}">
+            <a href="{{ p.url }}" {% if p.header.class %}class="{{ p.header.class }}"{% endif %}>
+                <span>{{ p.menu }}</span>
+            </a>
+            {% if p.children.count > 0 %}
+            <ul>
+                {{ self.loop(p, parent_loop|default(0)+loop.index) }}
+            </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{% macro version(p) %}
+    {% set parent_page = p.activeChild ? ' parent' : '' %}
+    {% set current_page = p.active ? ' active' : '' %}
+    {% if p.children.count > 0 and p.slug != 'home' %}
+        <h5 class="{{ parent_page }}{{ current_page }}">
+            <a href="/#">{{ p.menu }}</a>
+        </h5>
+    {% else %}
+        <h5 class="{{ parent_page }}{{ current_page }}">
+            <a href="{{ p.url }}">{{ p.menu }}</a>
+        </h5>
+    {% endif %}
+{% endmacro %}
+
+{% import _self as macro %}
+
+<div class="scrollbar-inner">
+    <div class="highlightable">
+        {% if theme_config.top_level_version %}
+            {% for slug, ver in pages.children %}
+                {{ macro.version(ver) }}
+                <ul id="{{ slug }}" class="topics">
+                {{ macro.loop(ver, '') }}
+                </ul>
+            {% endfor %}
+        {% else %}
+            <ul class="topics">
+                {% if theme_config.root_page %}
+                    {{ macro.loop(page.find(theme_config.root_page), '') }}
+                {% else %}
+            {{ macro.loop(pages, '') }}
+                {% endif %}
+            </ul>
+        {% endif %}
+        <!--<hr />
+
+        <section id="footer">
+            <p></p>
+        </section>-->
+    </div>
+</div>
