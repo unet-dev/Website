@@ -3,6 +3,10 @@
 // Your custom SCSS should be written here...
 
 // Custom SCSS
+h1 {
+    text-align: left;
+}
+
 #sidebar {
     h5 {
         background: darken($sidebar-bg, 7%);
